@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION['personne']))
+    header('location:home.php');
+else
+{
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,21 +14,23 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AjouterPersonne</title>
+    <title>creer compte</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="cssStuff.css"/>
 </head>
 <body>
-<div class="alert alert-primary"> insérer les données de la personne à ajouter</div>
-<form class="form-control" action="AddPeople.php" method="post">
+
+<div class="alert alert-primary"> insérer vos données</div>
+<form class="form-control" action="CreateAccount.php" method="post">
     <table>
         <tr>
-           <td> <label>Cin</label></td>
+            <td> <label>Cin</label></td>
             <td><input type="text" name="cin"></td>
 
         </tr>
         <tr>
             <td><label>Nom</label></td>
-           <td> <input type="text" name="nom"></td>
+            <td> <input type="text" name="nom"></td>
 
         </tr>
         <tr>
@@ -34,7 +45,7 @@
         </tr>
 
 
-       <tr>
+        <tr>
             <td> <label>mot De Passe</label></td>
             <td><input type="password" name="pwd"></td>
 
@@ -50,6 +61,18 @@
         </tr>
     </table>
 
-</form>
+
+    <div class="alert alert-success">
+        vous avez déjà un compte?
+        <br>
+        <button class="btn btn-primary">
+            <a href="seConnecter.php">
+                se connecter
+            </a>
+        </button>
+    </div>
 </body>
 </html>
+<?php
+}
+?>

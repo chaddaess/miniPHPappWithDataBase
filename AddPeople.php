@@ -5,10 +5,11 @@ $cnxPDO=ConnexionPDO::getInstance();
 $cin=$_POST['cin'];
 $nom=$_POST['nom'];
 $prenom=$_POST['prenom'];
+$pwd=$_POST['pwd'];
 $age=$_POST['age'];
 
 
-$requete="INSERT INTO personne(cin,nom,prenom,age) values(:cin,:nom,:prenom,:age)";
+$requete="INSERT INTO personne(cin,nom,prenom,age,mdp) values(:cin,:nom,:prenom,:age,:pwd)";
 
 $req=$cnxPDO->prepare($requete);
 $req->execute(
@@ -17,8 +18,9 @@ $req->execute(
         'nom'=>$nom,
         'prenom'=>$prenom,
         'age'=>$age,
+        'pwd'=>$pwd,
     )
-)
+);
 
 
 

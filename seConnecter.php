@@ -1,13 +1,10 @@
 <?php
 session_start();
-if(!isset($_SESSION['personne'] ))
-    header('location:seConnecter.php');
-else if ( $_SESSION['personne'][0]['nom']!='admin')
+if (isset($_SESSION['personne']))
     header('location:home.php');
 else
 {
     ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,18 +12,32 @@ else
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AjouterPersonne</title>
+    <title>seConnecter</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
 </head>
 <body>
-<div class="alert alert-primary"> insérer la cin de la personne à supprimer</div>
-<form class="form-control" action="DeletePeople.php" method="post">
-    <label>Cin à supprimer</label>
-    <input TYPE="text" name="cin">
-    <button class="btn btn-danger" type="submit">
-        supprimer
+<form CLASS="form-control" action="Login.php" method="post">
+    <label>
+        nom
+    </label>
+    <input type="text" name="login">
+
+    <label>
+        prenom
+    </label>
+    <input type="text" name="prenom">
+    <label>
+        password
+    </label>
+    <input type="password" name="pwd">
+    <br>
+    <br>
+
+    <button type="submit" class="btn btn-primary">
+        se connecter
     </button>
 </form>
+
 <?php
 }
 ?>

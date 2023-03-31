@@ -17,15 +17,34 @@ a:hover
     left: 45%;
 }
 
-button
-{
+.btn-success{
     height: 1.5cm;
     width: 4cm;
-
-
+    background-color: #924ee5;
+    border: 1px solid transparent;
+    border-radius: 6px;
 }
+
+
+
+
+
 
 body
 {
-    background-color: palegreen;
+    margin: 1px;
+    background-image: linear-gradient(to right,#20002c,#cbb4d4);
+}
+
+p
+{
+    /*background: linear-gradient(to right, #C33764,#1D2671);*/
+    /*-webkit-background-clip: text; !* for Safari *!*/
+    /*-webkit-text-fill-color: transparent; !* for Safari *!*/
+    /*background-clip: text;*/
+    /*text-fill-color: transparent;*/
+    color:white;
+    text-align: center;
+    font-size: xx-large;
+    font-family: "Georgia";
 }
